@@ -1,6 +1,7 @@
 ---
 
 - name: Import Oracle VirtualBox public key
+  become: yes
   rpm_key:
     state: present
     key: https://www.virtualbox.org/download/oracle_vbox.asc

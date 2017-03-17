@@ -1,6 +1,6 @@
 # Ansible Role: Oracle VirtualBox
 
-Install and configure Terminator terminal: <https://www.virtualbox.org/>
+Install Oracle VirtualBox <https://www.virtualbox.org/> from Oracle repository.
 
 ## Requirements
 
