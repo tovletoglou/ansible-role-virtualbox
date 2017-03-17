@@ -1,0 +1,7 @@
+---
+
+# The default version to install.
+virtualbox_version: VirtualBox-5.1
+
+# Keep update with minor versions 5.1.x (present | latest | absent).
+virtualbox_update: latest

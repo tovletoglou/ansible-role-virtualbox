@@ -1,0 +1,24 @@
+---
+
+- name: Import Oracle VirtualBox public key
+  rpm_key:
+    state: present
+    key: https://www.virtualbox.org/download/oracle_vbox.asc
+
+- name: Add Oracle VirtualBox repository
+  become: yes
+  yum_repository:
+    name: virtualbox
+    description: Fedora $releasever - $basearch - VirtualBox
+    baseurl: http://download.virtualbox.org/virtualbox/rpm/fedora/$releasever/$basearch
+    enabled: no
+    gpgcheck: yes
+    repo_gpgcheck: no
+    gpgkey: https://www.virtualbox.org/download/oracle_vbox.asc
+
+- name: Install VirtualBox
+  become: yes
+  dnf:
+    name: "{{ virtualbox_version }}"
+    enablerepo: virtualbox
+    state: "{{ virtualbox_update }}"
